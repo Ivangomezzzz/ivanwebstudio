@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iván Web Studio — Diseño Web Profesional para Establecimientos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Local -->
+    <meta name="description" content="Iván Web Studio crea webs modernas para restaurantes, tiendas, gimnasios, barberías y negocios locales. Diseño web profesional, SEO local y planes mensuales tipo SaaS.">
+    <meta name="keywords" content="diseño web, webs para restaurantes, webs para tiendas, webs para gimnasios, webs para barberías, SEO local, diseño web profesional, Iván Web Studio">
+
+    <!-- Fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #050509;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        a { color: #00d4ff; text-decoration: none; }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(5,5,9,0.85);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        nav h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        nav .links a {
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Animación */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.9s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Secciones generales */
+        section {
+            padding: 100px 60px;
+            box-sizing: border-box;
+        }
+
+        section h2 {
+            font-size: 2.4rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, #00d4ff 0%, #050509 45%, #000000 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 60px;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-tagline {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #9be8ff;
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-group {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .cta-btn {
+            padding: 14px 32px;
+            background: #ffffff;
+            color: #000;
+            font-size: 1rem;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+            border: none;
+        }
+
+        .cta-btn.secondary {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #444;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background: #e6e6e6;
+        }
+
+        .cta-btn.secondary:hover {
+            background: #111;
+        }
+
+        /* Servicios */
+        .services {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #101018;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #1f1f2a;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00d4ff;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            opacity: 0.85;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Planes / SaaS */
+        .pricing {
+            background: #080810;
+        }
+
+        .pricing-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: #11111a;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #1f1f2a;
+            text-align: left;
+        }
+
+        .price-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .price-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .price-detail {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .price-tag {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 8px;
+        }
+
+        /* Proyectos */
+        .projects {
+            background: #080810;
+        }
+
+        .projects-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: #11111a;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #1f1f2a;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #00d4ff;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #1f1f2a;
+        }
+
+        .project-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .project-header span {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .project-body {
+            padding: 16px 20px 20px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            opacity: 0.75;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h1>Iván Web Studio</h1>
+        <div class="links">
+            <a href="#servicios">Servicios</a>
+            <a href="#saas">Planes</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#steps">Cómo trabajamos</a>
+            <a href="#trust">Confianza</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero fade-in">
+        <div class="hero-content">
+            <div class="hero-tagline">DISEÑO WEB · SEO LOCAL · MODELO SAAS</div>
+            <h2>Webs modernas que convierten visitas en clientes.</h2>
+            <p>
+                Soy Iván, diseñador web especializado en negocios locales.  
+                Mi objetivo es que tu establecimiento tenga una web profesional, rápida, bonita y optimizada para que tus clientes te encuentren y te elijan.
+            </p>
+            <div class="cta-group">
+                <button class="cta-btn">Solicitar presupuesto</button>
+                <button class="cta-btn secondary">Ver proyectos</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="services fade-in">
+        <h2>Qué hago por tu establecimiento</h2>
+        <div class="service-grid">
+            <div class="card">
+                <h3>Diseño Web Premium</h3>
+                <p>Webs rápidas, elegantes y adaptadas a móvil, pensadas para que tu negocio se vea profesional desde el primer segundo.</p>
+            </div>
+            <div class="card">
+                <h3>SEO Local</h3>
+                <p>Optimización para que tu establecimiento aparezca en Google cuando tus clientes buscan servicios cerca de ellos.</p>
+            </div>
+            <div class="card">
+                <h3>Gestión Continua</h3>
+                <p>Actualización de menús, horarios, promociones, fotos y productos sin que tengas que tocar nada técnico.</p>
+            </div>
+            <div class="card">
+                <h3>Identidad Visual</h3>
+                <p>Creación de logos, paleta de colores y estilo visual coherente para que tu marca tenga una imagen sólida y reconocible.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANES / SAAS -->
+    <section id="saas" class="pricing fade-in">
+        <h2>Planes mensuales (modelo SaaS)</h2>
+        <div class="pricing-inner">
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <div class="price-title">Plan Básico</div>
+                    <div class="price-value">49€ / mes</div>
+                    <div class="price-detail">
+                        Ideal para pequeños establecimientos que necesitan una web sencilla pero profesional.
+                    </div>
+                    <div class="price-tag">Sin permanencia · Soporte por email</div>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-title">Plan Profesional</div>
+                    <div class="price-value">89€ / mes</div>
+                    <div class="price-detail">
+                        Para negocios que quieren destacar: varias secciones, galería de fotos, menú digital, WhatsApp y SEO local.
+                    </div>
+                    <div class="price-tag">Actualizaciones mensuales · Soporte prioritario</div>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-title">Plan Premium</div>
+                    <div class="price-value">149€ / mes</div>
+                    <div class="price-detail">
+                        Web completa tipo agencia: diseño a medida, landing para campañas, blog, optimización avanzada y gestión continua.
+                    </div>
+                    <div class="price-tag">Para negocios que quieren crecer en serio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="projects fade-in">
+        <h2>Ejemplos de proyectos realizados</h2>
+        <div class="projects-wrapper">
+            <div class="projects-grid">
+
+                <!-- Restaurante -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80" class="project-img">
+                    <div class="project-header">
+                        <h3>Ejemplo: Restaurante moderno</h3>
+                        <span>Menú digital · Reservas online</span>
+                    </div>
+                    <div class="project-body">
+                        Diseño elegante con menú digital, sistema de reservas y sección de eventos.
+                        <div class="project-tags">HTML, CSS, JS · SEO Local</div>
+                    </div>
+                </div>
+
+                <!-- Gimnasio -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1200&q=80" class="project-img">
+                    <div class="project-header">
+                        <h3>Ejemplo: Gimnasio FitZone</h3>
+                        <span>Horarios · Planes · Landing comercial</span>
+                    </div>
+                    <div class="project-body">
+                        Web con tabla de horarios, planes de suscripción y landing optimizada para campañas.
+                        <div class="project-tags">HTML, CSS, JS · Marketing</div>
+                    </div>
+                </div>
+
+                <!-- Cafetería -->
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80" class="project-img">
+                    <div class="project-header">
+                        <h3>Ejemplo: Cafetería Dulce Aroma</h3>
+                        <span>Carta · Galería · Ubicación</span>
+                    </div>
+                    <div class="project-body">
+                        Web cálida con galería de fotos, carta de productos y ubicación integrada.
+                        <div class="project-tags">HTML, CSS · Google Maps</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+      <!-- CÓMO TRABAJAMOS -->
+    <section id="steps" class="steps fade-in">
+        <h2>Cómo trabajamos</h2>
+        <div class="steps-grid">
+
+            <div class="step-card">
+                <h3>1. Hablamos de tu negocio</h3>
+                <p>Me cuentas qué haces, qué ofreces y qué quieres conseguir con tu web.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>2. Diseño inicial</h3>
+                <p>Creo un diseño moderno, limpio y adaptado a tu estilo y a tu tipo de negocio.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>3. Desarrollo</h3>
+                <p>Construyo tu web optimizada, rápida y preparada para posicionar en Google.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>4. Revisión</h3>
+                <p>Revisamos juntos la web y ajustamos lo que necesites.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>5. Publicación</h3>
+                <p>Tu web queda publicada y lista para recibir clientes.</p>
+            </div>
+
+            <div class="step-card">
+                <h3>6. Mantenimiento mensual</h3>
+                <p>Actualizaciones, cambios, fotos, promociones y soporte continuo.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VENTAJAS DEL MODELO SAAS -->
+    <section class="pricing fade-in">
+        <h2>Ventajas del modelo mensual</h2>
+        <div class="saas-advantages">
+            <ul class="saas-list">
+                <li>No pagas 800–1500€ de golpe.</li>
+                <li>Tu web siempre está actualizada.</li>
+                <li>Hosting incluido.</li>
+                <li>Soporte continuo.</li>
+                <li>Cambios cuando los necesites.</li>
+                <li>Sin preocupaciones técnicas.</li>
+                <li>Sin permanencia.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CONFIANZA -->
+    <section id="trust" class="trust fade-in">
+        <h2>Casos de éxito y razones para confiar</h2>
+        <div class="trust-grid">
+
+            <div class="trust-card">
+                <h3>Resultados posibles</h3>
+                <p>Un restaurante puede aumentar sus reservas un 35% con una web optimizada.</p>
+                <p>Una barbería puede recibir 3 veces más mensajes gracias a WhatsApp integrado.</p>
+                <p>Un gimnasio puede llenar sus clases con una landing bien diseñada.</p>
+            </div>
+
+            <div class="trust-card">
+                <h3>Experiencia real</h3>
+                <p>He trabajado con negocios locales que necesitaban una web moderna, rápida y fácil de gestionar.</p>
+                <p>Mi enfoque es práctico: diseño limpio, velocidad y conversión.</p>
+            </div>
+
+            <div class="trust-card">
+                <h3>Tu negocio, mi prioridad</h3>
+                <p>Me involucro en cada proyecto como si fuera mío. Tu web no será una plantilla más.</p>
+            </div>
+
+            <div class="trust-card">
+                <h3>Modelo mensual</h3>
+                <p>No pagas grandes cantidades de golpe.</p>
+                <p>Actualizaciones incluidas, sin preocupaciones técnicas.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq fade-in">
+        <h2>Preguntas frecuentes</h2>
+
+        <div class="faq-item">
+            <h3>¿Cuánto tarda una web?</h3>
+            <p>Entre 3 y 7 días, dependiendo del contenido que necesites.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Tengo que pagar algo más?</h3>
+            <p>No. El precio mensual incluye hosting, mantenimiento, cambios y soporte.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Puedo cancelar cuando quiera?</h3>
+            <p>Sí, no hay permanencia. Tú decides cuánto tiempo quieres mantener tu web.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Puedo pedir cambios cuando quiera?</h3>
+            <p>Sí, puedes pedirme cambios, fotos nuevas, promociones, horarios, etc.</p>
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact fade-in">
+        <h2>Contacto</h2>
+        <div class="contact-inner">
+            <p>Si quieres una web moderna, rápida y profesional para tu negocio, estoy aquí para ayudarte.</p>
+            <div class="contact-info">
+              <p><strong>Email:</strong> igom6977@gmail.com</p>
+                <p><strong>WhatsApp:</strong> +34 622185319</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/34622185319" class="whatsapp-btn" target="_blank">
+        Escríbeme por WhatsApp
+    </a>
+  
+  <section class="why-us">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+        <li>Diseños modernos adaptados a tu negocio</li>
+        <li>Webs rápidas y optimizadas para Google</li>
+        <li>Soporte directo por WhatsApp</li>
+        <li>Entrega en menos de 7 días</li>
+    </ul>
+</section>
+
+  .testimonials {
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+.testimonial {
+    background: #f5f5f5;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+.testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+ 
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Iván Web Studio — Diseño Web Profesional
+    </footer>
+
+</body>
+</html>
