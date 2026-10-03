@@ -1,68 +1,311 @@
-/* HERO */
-.hero {
-    padding: 80px 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-    color: #ffffff;
+/* ===========================
+   GLOBAL
+=========================== */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #050509;
+    color: #fff;
+    overflow-x: hidden;
 }
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.hero-tagline {
-    font-size: 14px;
-    letter-spacing: 2px;
-    font-weight: 600;
+a {
     color: #00e0b8;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.hero h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-
-.hero p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    color: #dcdcdc;
-}
-
-.cta-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.cta-btn {
-    padding: 14px 28px;
-    font-size: 16px;
-    font-weight: 600;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    background-color: #00e0b8;
-    color: #000;
+    text-decoration: none;
     transition: 0.3s ease;
 }
 
+a:hover {
+    opacity: 0.8;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(5, 5, 9, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+nav h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+nav .links a {
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* ===========================
+   ANIMACIONES
+=========================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.9s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   SECCIONES
+=========================== */
+section {
+    padding: 120px 60px;
+    box-sizing: border-box;
+}
+
+section h2 {
+    font-size: 2.6rem;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #00e0b8 0%, #050509 45%, #000000 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 60px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-tagline {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #00e0b8;
+    font-weight: 600;
+}
+
+.hero h2 {
+    font-size: 3.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+.cta-group {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+}
+
+.cta-btn {
+    padding: 14px 32px;
+    background: #00e0b8;
+    color: #000;
+    font-size: 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-weight: 600;
+    border: none;
+}
+
 .cta-btn:hover {
-    background-color: #00c9a4;
+    transform: translateY(-2px);
+    background: #00c9a4;
 }
 
 .cta-btn.secondary {
-    background-color: transparent;
-    border: 2px solid #00e0b8;
+    background: transparent;
     color: #00e0b8;
+    border: 2px solid #00e0b8;
 }
 
 .cta-btn.secondary:hover {
-    background-color: #00e0b8;
+    background: #00e0b8;
     color: #000;
 }
+
+/* ===========================
+   SERVICIOS
+=========================== */
+.services {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #0c0c12;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #1f1f2a;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00e0b8;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.card p {
+    opacity: 0.85;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ===========================
+   PRICING / PLANES
+=========================== */
+.pricing {
+    background: #080810;
+}
+
+.pricing-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.price-card {
+    background: #11111a;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #1f1f2a;
+    text-align: left;
+    transition: 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-6px);
+    border-color: #00e0b8;
+}
+
+.price-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.price-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #00e0b8;
+}
+
+.price-detail {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+.price-tag {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 8px;
+}
+
+/* ===========================
+   PROYECTOS
+=========================== */
+.projects {
+    background: #080810;
+}
+
+.projects-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: #11111a;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #1f1f2a;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: #00e0b8;
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #1f1f2a;
+}
+
+.project-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.project-header span {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.project-body {
+    padding: 16px 20px 20px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.project-tags {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
