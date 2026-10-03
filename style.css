@@ -334,3 +334,85 @@ section h2 {
     opacity: 0.75;
     color: #cfd9df;
 }
+
+/* ===========================
+   MEJORAS PREMIUM 2026/2027
+=========================== */
+
+/* Texto más claro y premium */
+body, p, .card p, .price-detail, .project-body {
+    color: #e9f1f5;
+}
+
+/* Títulos de sección con borde premium */
+section h2 {
+    border-bottom: 1px solid rgba(125, 223, 255, 0.25);
+    display: inline-block;
+    padding-bottom: 12px;
+}
+
+/* Hover premium en títulos de tarjetas */
+.card:hover h3,
+.price-card:hover .price-title,
+.project-card:hover .project-header h3 {
+    color: #7ddfff;
+}
+
+/* Glow suave en tarjetas */
+.card:hover,
+.price-card:hover,
+.project-card:hover {
+    box-shadow: 0 0 28px rgba(125, 223, 255, 0.45);
+}
+
+/* Glow suave en botones */
+.cta-btn:hover,
+.cta-btn.secondary:hover {
+    box-shadow: 0 0 22px rgba(125, 223, 255, 0.55);
+}
+
+/* Animación fade-up premium */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.9s forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bordes más modernos (20px) */
+.card,
+.price-card,
+.project-card {
+    border-radius: 20px;
+}
+
+/* Navbar más premium */
+nav {
+    border-bottom: 1px solid rgba(125, 223, 255, 0.15);
+}
+
+/* Links más elegantes */
+nav .links a {
+    color: #dfe6eb;
+}
+
+nav .links a:hover {
+    color: #7ddfff;
+}
+
+/* Hero más limpio */
+.hero p {
+    color: #e9f1f5;
+}
+
+/* Proyectos: categoría más premium */
+.project-header span {
+    color: #7ddfff;
+    font-weight: 500;
+}
