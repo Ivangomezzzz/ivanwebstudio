@@ -27,7 +27,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 22px 60px;
-    position: relative;
+    position: sticky;
     width: 100%;
     background: rgba(5, 5, 9, 0.75);
     backdrop-filter: blur(14px);
@@ -445,7 +445,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 22px 60px;
-    position: relative;
+    position: sticky;
     width: 100%;
     background: rgba(5, 5, 9, 0.75);
     backdrop-filter: blur(14px);
